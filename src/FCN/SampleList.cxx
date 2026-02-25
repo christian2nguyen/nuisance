@@ -186,6 +186,7 @@
 #include "MicroBooNE_CC1MuNp_XSec_1D_nu.h"
 #include "MicroBooNE_CC1ENp_XSec_1D_nu.h"
 #include "MicroBooNE_CCInc_XSec_2DPcos_nu.h"
+#include "MicroBooNE_BNB_NumuCC0Pi_2025_XSec_nu_2D.h"
 #endif
 
 #ifdef MINERvA_ENABLED
@@ -1113,7 +1114,9 @@ MeasurementBase *CreateSample(nuiskey samplekey) {
     /*
     MicroBooNE Samples
     */
-    if (!name.compare("MicroBooNE_CCInc_XSec_2DPcos_nu")) {
+    if (!name.compare("MicroBooNE_BNB_NumuCC0Pi_2025_XSec_nu_2D")) {
+      return (new MicroBooNE_BNB_NumuCC0Pi_2025_XSec_nu_2D(samplekey));
+    } else if (!name.compare("MicroBooNE_CCInc_XSec_2DPcos_nu")) {
       return (new MicroBooNE_CCInc_XSec_2DPcos_nu(samplekey));
     } else if (!name.compare("MicroBooNE_CC1MuNp_XSec_1DPmu_nu") ||
                !name.compare("MicroBooNE_CC1MuNp_XSec_1Dcosmu_nu") ||

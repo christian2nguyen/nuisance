@@ -48,6 +48,14 @@ bool isCC1Mu2p(FitEvent* event, double EnuMin, double EnuMax);
 bool isCC1Mu1p(FitEvent* event, double EnuMin, double EnuMax);
 std::vector<FitParticle*> GetCC1Mu1pProtonsInPS(FitEvent* event);
 
+/**
+ * numu CC with 1 muon (0.1 < Pmu < 2.0 GeV/c), no neutral pions (any momenta), and no charged pions above 70 MeV/c [any number of neutrons is allowed].
+ *
+ * publication reference to be updated
+ */
+bool isCC1Mu0pi_2025(FitEvent* event, double EnuMin, double EnuMax);
+
+
   }  // namespace MicroBooNE
 }  // namespace SignalDef
 
