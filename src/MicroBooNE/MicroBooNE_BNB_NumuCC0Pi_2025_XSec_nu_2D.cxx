@@ -101,6 +101,7 @@ namespace {
     return 0.;
   }
 */
+/*
 std::map<int, double> BinWidthMap = {
  {1,  0.07},
  {2,  0.03},
@@ -140,7 +141,48 @@ std::map<int, double> BinWidthMap = {
  {36, 0.0258},
  {37, 0.04325}
 };
+*/
+std::map<int, double> BinWidthMap = {
 
+{1,   0.063},
+{2,   0.077},
+{3,   0.063},
+{4,   0.077},
+{5,   0.027},
+{6,   0.018},
+{7,   0.015},
+{8,   0.015},
+{9,   0.012},
+{10,   0.015},
+{11,   0.018},
+{12,   0.048},
+{13,   0.024},
+{14,   0.016},
+{15,   0.02},
+{16,   0.012},
+{17,   0.016},
+{18,   0.012},
+{19,   0.012},
+{20,   0.1},
+{21,   0.05},
+{22,   0.015},
+{23,   0.015},
+{24,   0.012},
+{25,   0.008},
+{26,   0.33},
+{27,   0.033},
+{28,   0.033},
+{29,   0.0165},
+{30,   0.0165},
+{31,   0.011},
+{32,   0.28125},
+{33,   0.01125},
+{34,   0.0075},
+{35,   2.185},
+{36,   0.0575},
+{37,   0.0575}
+
+};
 
 
 }
@@ -448,7 +490,7 @@ void MicroBooNE_BNB_NumuCC0Pi_2025_XSec_nu_2D::ConvertEventRates() {
   // Also BinWith norm
 for ( int b = 0; b < num_bins; ++b ) {
     double xsec = new_pred( b, 0 );
-    fMCHist->SetBinContent( b + 1, xsec / BinWidthMap[b + 1] );
+    fMCHist->SetBinContent( b + 1, xsec / BinWidthMap[b + 1]); // / BinWidthMap[b + 1] 
   }
   
 }
